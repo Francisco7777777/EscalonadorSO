@@ -9,36 +9,37 @@ import java.util.logging.Logger;
 
 public class Escalonador {
 
-    public static List<Processo> prontos = new ArrayList<>();               //lista de processos prontos.
-    public static List<Processo> bloqueados = new ArrayList<>();          //lista de processos bloqueados.
-    public static List<Processo> finalizados = new ArrayList<>();         //lista de processos bloqueados.
+    public static List<Processo> prontos = new ArrayList<>();              
+    public static List<Processo> bloqueados = new ArrayList<>();          
+    public static List<Processo> finalizados = new ArrayList<>();         
     public static Processo executando;
-    public static int qtdeProcesso;                                       //Quantidade de processo.
-    public static int qtdeEscalonamento = 0;                              /*Quantidade de escalonamento
-                                                                            iniciacom valor 0.          */
+    public static int qtdeProcesso;                                      
+    public static int qtdeEscalonamento = 0;                              
+                                                                            
    
     //O metodo imprime o status da lista de processo.
     public static void imprimeStatusListas() {                       
         System.out.println("--------------- ESCALONAMENTO "+qtdeEscalonamento+" ---------------");
-        System.out.println("PRONTOS: " + prontos.size());                     //a quantidade de processos
+        System.out.println("PRONTOS: " + prontos.size());                    
         for (Processo pronto : prontos) {
-            System.out.print(" | " + pronto.toString());                     //imprime os processos proto.
+            System.out.print(" | " + pronto.toString());                    
         }
         System.out.println("\nBLOQUEADOS: " + bloqueados.size());
         for (Processo bloqueado : bloqueados) {
-            System.out.print(" | " + bloqueado.toString());              //imprime os processos bloqueados
+            System.out.print(" | " + bloqueado.toString());             
         }
         System.out.println("\nFINALIZADOS: " + finalizados.size());
         for (Processo finalizado : finalizados) {
-            System.out.print(" | " + finalizado.toString());            //imprime os processos finalisados
+            System.out.print(" | " + finalizado.toString());            
         }
         if (executando != null) {
-            System.out.println("\nEXECUTANDO: " + executando.toString()); //imprime o processo em execução
+            System.out.println("\nEXECUTANDO: " + executando.toString());
         }else{
            System.out.println("\nEXECUTANDO: null"); 
         }
         System.out.println("\n");
     }
+    
     //metodo bloqueado topo pronto
     public static void bloqueadoToPronto() {        
             Processo p = bloqueados.get(0);
