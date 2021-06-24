@@ -5,6 +5,8 @@ package enumConfig;
 public enum EnumEstado {
     EXECUTANDO, PRONTO, BLOQUEADO, FINALIZADO;
     
-    /*Esta clase comten variaveis constantes. O estado de um processo (executando, pronto, 
-    bloqueado, finalizado).*/
+    /* Esta classe contém variáveis constantes. O estado de um processo pode estar (executando, pronto,
+     bloqueado, finalizado). */
+
+
 }
